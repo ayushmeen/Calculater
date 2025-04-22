@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ultimate Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="box">
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <div class="ans" id="display">
+      <span id="output">0</span>
+      <button class="copy-btn" onclick="copyResult()">📋</button>
+    </div>
+    <div class="numbers">
+      <div id="c" onclick="clickS(); clearDisplay()">C</div>
+      <div id="c" onclick="clickS(); toggleSign()">±</div>
+      <div id="c" onclick="clickS(); appendValue('%')">%</div>
+      <div id="y" onclick="clickS(); appendValue('/')">÷</div>
+
+      <div onclick="clickS(); appendValue('7')">7</div>
+      <div onclick="clickS(); appendValue('8')">8</div>
+      <div onclick="clickS(); appendValue('9')">9</div>
+      <div id="y" onclick="clickS(); appendValue('*')">×</div>
+
+      <div onclick="clickS(); appendValue('4')">4</div>
+      <div onclick="clickS(); appendValue('5')">5</div>
+      <div onclick="clickS(); appendValue('6')">6</div>
+      <div id="y" onclick="clickS(); appendValue('-')">−</div>
+
+      <div onclick="clickS(); appendValue('1')">1</div>
+      <div onclick="clickS(); appendValue('2')">2</div>
+      <div onclick="clickS(); appendValue('3')">3</div>
+      <div id="y" onclick="clickS(); appendValue('+')">+</div>
+
+      <div class="h" onclick="clickS(); appendValue('0')">0</div>
+
+      <div onclick="clickS(); appendValue('.')">.</div>
+      <div id="y" onclick="clickS(); calculate()">=</div>
+    </div>
+  </div>
+
+  <div class="history" id="history">
+    <h4>History</h4>
+    <div id="history-entries"></div>
+  </div>
+
+  <audio id="clickSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
